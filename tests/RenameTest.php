@@ -1,6 +1,7 @@
 <?php
 
-namespace Nnssn\Str;
+namespace Adn\Str\Test;
+use Adn\Str\App\Rename;
 
 class RenameTest extends \PHPUnit_Framework_TestCase
 {
@@ -8,7 +9,7 @@ class RenameTest extends \PHPUnit_Framework_TestCase
     /**
      * Return the test names
      */
-    protected function getNames()
+    protected function getNames(): array
     {
         return [
             'sc'   => 'snake_case_name',
@@ -21,8 +22,8 @@ class RenameTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Nnssn\Str\Rename::snake
-     * @covers Nnssn\Str\Rename::underscore
+     * @covers Rename::snake
+     * @covers Rename::underscore
      */
     public function testSnake()
     {
@@ -34,14 +35,14 @@ class RenameTest extends \PHPUnit_Framework_TestCase
             'ucc'  => 'upper_camel_name',
             'psr0' => 'psr_zero_name',
         ];
-        $renames = array_map('Nnssn\Str\Rename::snake', $this->getNames());
+        $renames = array_map('Adn\Str\App\Rename::snake', $this->getNames());
 
         $this->assertEquals($expected, $renames);
     }
 
     /**
-     * @covers Nnssn\Str\Rename::constant
-     * @covers Nnssn\Str\Rename::underscore
+     * @covers Rename::constant
+     * @covers Rename::underscore
      */
     public function testConstant()
     {
@@ -53,14 +54,14 @@ class RenameTest extends \PHPUnit_Framework_TestCase
             'ucc'  => 'UPPER_CAMEL_NAME',
             'psr0' => 'PSR_ZERO_NAME',
         ];
-        $renames = array_map('Nnssn\Str\Rename::constant', $this->getNames());
+        $renames = array_map('Adn\Str\App\Rename::constant', $this->getNames());
 
         $this->assertEquals($expected, $renames);
     }
 
     /**
-     * @covers Nnssn\Str\Rename::hyphen
-     * @covers Nnssn\Str\Rename::underscore
+     * @covers Rename::hyphen
+     * @covers Rename::underscore
      */
     public function testHyphen()
     {
@@ -72,13 +73,13 @@ class RenameTest extends \PHPUnit_Framework_TestCase
             'ucc'  => 'upper-camel-name',
             'psr0' => 'psr-zero-name',
         ];
-        $renames = array_map('Nnssn\Str\Rename::hyphen', $this->getNames());
+        $renames = array_map('Adn\Str\App\Rename::hyphen', $this->getNames());
 
         $this->assertEquals($expected, $renames);
     }
 
     /**
-     * @covers Nnssn\Str\Rename::camel
+     * @covers Rename::camel
      */
     public function testCamel()
     {
@@ -90,13 +91,13 @@ class RenameTest extends \PHPUnit_Framework_TestCase
             'ucc'  => 'upperCamelName',
             'psr0' => 'psrZeroName',
         ];
-        $renames = array_map('Nnssn\Str\Rename::camel', $this->getNames());
+        $renames = array_map('Adn\Str\App\Rename::camel', $this->getNames());
 
         $this->assertEquals($expected, $renames);
     }
 
     /**
-     * @covers Nnssn\Str\Rename::pascal
+     * @covers Rename::pascal
      */
     public function testPascal()
     {
@@ -108,13 +109,13 @@ class RenameTest extends \PHPUnit_Framework_TestCase
             'ucc'  => 'UpperCamelName',
             'psr0' => 'PsrZeroName',
         ];
-        $renames = array_map('Nnssn\Str\Rename::pascal', $this->getNames());
+        $renames = array_map('Adn\Str\App\Rename::pascal', $this->getNames());
 
         $this->assertEquals($expected, $renames);
     }
 
     /**
-     * @covers Nnssn\Str\Rename::unite
+     * @covers Rename::unite
      */
     public function testUnite()
     {
@@ -126,13 +127,13 @@ class RenameTest extends \PHPUnit_Framework_TestCase
             'ucc'  => 'uppercamelname',
             'psr0' => 'psrzeroname',
         ];
-        $renames = array_map('Nnssn\Str\Rename::unite', $this->getNames());
+        $renames = array_map('Adn\Str\App\Rename::unite', $this->getNames());
 
         $this->assertEquals($expected, $renames);
     }
 
     /**
-     * @covers Nnssn\Str\Rename::uniteUp
+     * @covers Rename::uniteUp
      */
     public function testUniteUp()
     {
@@ -144,7 +145,7 @@ class RenameTest extends \PHPUnit_Framework_TestCase
             'ucc'  => 'UPPERCAMELNAME',
             'psr0' => 'PSRZERONAME',
         ];
-        $renames = array_map('Nnssn\Str\Rename::uniteUp', $this->getNames());
+        $renames = array_map('Adn\Str\App\Rename::uniteUp', $this->getNames());
 
         $this->assertEquals($expected, $renames);
     }

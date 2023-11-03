@@ -1,20 +1,16 @@
 {
-    "name": "nnssn/str-rename",
+    "name": "serviceinfoadn/str-rename",
+    "version": "1.0.0",
     "description": "Converts the camel case and snake case each other.",
     "keywords": ["string", "camel", "pascal", "snake", "underscore"],
     "type": "library",
     "license": "MIT",
-    "homepage": "https://github.com/nnssn/str-rename",
-    "authors": [{
-        "name": "nnssn",
-        "email": "bool1or0@gmail.com"
-    }],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=8.0"
     },
     "autoload": {
         "psr-4": {
-            "Nnssn\\Str\\": "src/"
+            "Adn\\Str\\": "src/"
         }
     }
 }

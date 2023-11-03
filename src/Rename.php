@@ -1,24 +1,16 @@
 <?php
 
-/**
- * Str\Rename
- *
- * @author nnssn
- */
-
-namespace Nnssn\Str;
+namespace Adn\Str\App;
 
 class Rename
 {
     /**
-     * underscore
-     *
      * @param string $string
      * @return string
      */
-    private static function underscore($string)
+    private static function underscore(string $string): string
     {
-        if (strpos($string, '_') !== false) {
+        if (str_contains($string, '_')) {
             return $string;
         }
         return strtr(preg_replace('/(?<=.)[A-Z]/', '_\0', $string), ['-' => '_']);
@@ -30,7 +22,7 @@ class Rename
      * @param string $string
      * @return string
      */
-    public static function snake($string)
+    public static function snake(string $string): string
     {
         return strtolower(self::underscore($string));
     }
@@ -41,7 +33,7 @@ class Rename
      * @param string $string
      * @return string
      */
-    public static function constant($string)
+    public static function constant(string $string): string
     {
         return strtoupper(self::underscore($string));
     }
@@ -52,7 +44,7 @@ class Rename
      * @param string $string
      * @return string
      */
-    public static function hyphen($string)
+    public static function hyphen(string $string): string
     {
         return strtolower(strtr(self::underscore($string), ['_' => '-']));
     }
@@ -63,7 +55,7 @@ class Rename
      * @param string $string
      * @return string
      */
-    public static function camel($string)
+    public static function camel(string $string): string
     {
         return lcfirst(self::pascal($string));
     }
@@ -74,7 +66,7 @@ class Rename
      * @param string $string
      * @return string
      */
-    public static function pascal($string)
+    public static function pascal(string $string): string
     {
         $hit = 0;
         str_replace(['_', '-'], '', $string, $hit);
@@ -89,7 +81,7 @@ class Rename
      * @param string $string
      * @return string
      */
-    public static function unite($string)
+    public static function unite(string $string): string
     {
         return strtolower(strtr($string, ['_' => '', '-' => '']));
     }
@@ -100,7 +92,7 @@ class Rename
      * @param string $string
      * @return string
      */
-    public static function uniteUp($string)
+    public static function uniteUp(string $string): string
     {
         return strtoupper(strtr($string, ['_' => '', '-' => '']));
     }

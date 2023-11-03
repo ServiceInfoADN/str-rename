@@ -1,15 +1,15 @@
-nnssn/str-rename
+serviceinfoadn/str-rename
 ====
 Converts the camel case and snake case each other.
 
 ## Requirement
 
-PHP 5.4.0
+PHP 8.0.0 and more
 
 ## Install
 
 ```
-composer require nnssn/str-rename
+composer require serviceinfoadn/str-rename
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ composer require nnssn/str-rename
 ```
 require 'vendor/autoload.php';  
   
-use Nnssn\Str\Rename;  
+use Adn\Str\Rename;  
   
 echo Rename::snake('camelCase');         // camel_case  
 echo Rename::snake('PascalCase');        // pascal_case  
@@ -40,7 +40,4 @@ Rename::unite
 Rename::uniteUp  
 ```
 
-## Licence
-
-[MIT](http://opensource.org/licenses/mit-license.php)
 
